@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz JavaScript : Résultat</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <div class="brand-icon">&lt;/&gt;</div>
+            <h1>Quiz JavaScript</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card result-card">
+            <span class="badge-tag">📊 Bilan Académique</span>
+            <h2 class="result-title">Ton résultat</h2>
+
+            <!-- Cercle du score, rempli par resultat.js -->
+            <div class="score-badge-circle">
+                <p id="score" class="score"></p>
+                <span class="score-label">Score Final</span>
+            </div>
+
+            <!-- Commentaire rempli par resultat.js -->
+            <p id="commentaire"></p>
+
+            <div class="result-actions">
+                <a class="btn" href="quiz.html">🔄 Rejouer le quiz</a>
+                <a class="btn btn-clair" href="../index.html">Retour à l'accueil</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>ISSAT Sousse — Chehata Rayen — Mini Projet JavaScript</p>
+    </footer>
+
+    <script src="resultat.js"></script>
+</body>
+</html>
