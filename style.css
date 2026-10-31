@@ -237,6 +237,22 @@ main {
     margin-bottom: 0;
 }
 
+.chronometre {
+    width: fit-content;
+    margin: 0 0 12px auto;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.chronometre.urgent {
+    background-color: var(--danger-bg);
+    color: var(--danger-text);
+}
+
 #compteur {
     font-weight: 700;
     color: var(--primary);
