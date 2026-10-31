@@ -116,6 +116,20 @@ function verrouillerQuestion() {
     }
 }
 
+function calculerPoints() {
+    const tempsUtilise = DUREE_QUESTION - tempsRestant;
+
+    if (tempsUtilise <= 3) {
+        return 1;
+    }
+
+    if (tempsUtilise <= 7) {
+        return 0.5;
+    }
+
+    return 0.25;
+}
+
 function gererExpiration() {
     // Bloque les réponses lorsque le compte à rebours est terminé.
     verrouillerQuestion();
@@ -147,8 +161,11 @@ function verifier(choix) {
     questionVerrouillee = true;
 
     if (choix === q.reponse) {
-        score++;
-        message.textContent = "Bonne réponse ! " + q.explication;
+        const points = calculerPoints();
+        score += points;
+        message.textContent = "Bonne réponse ! +" + points + " point "
+            + q.explication;
+
     } else {
         boutons[choix].classList.add("faux");
         message.textContent = "Raté. " + q.explication;

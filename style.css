@@ -389,8 +389,8 @@ progress#progression::-moz-progress-bar {
 }
 
 .score-badge-circle {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto 24px;
     border-radius: 50%;
     border: 7px solid var(--primary);
