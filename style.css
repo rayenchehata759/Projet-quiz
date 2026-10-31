@@ -200,6 +200,12 @@ main {
     color: var(--text-muted);
 }
 
+.best-score {
+    margin-top: 24px;
+    color: var(--primary);
+    font-weight: 700;
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

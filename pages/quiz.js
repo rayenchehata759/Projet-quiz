@@ -33,6 +33,7 @@ const questions = [
     }
 ];
 
+const meilleurScore = Number(localStorage.getItem("meilleurScore")) || 0;
 // 2. Les variables du jeu
 let numero = 0;   // numéro de la question en cours (0 = la première)
 let score = 0;    // nombre de reponses réponses
@@ -121,7 +122,8 @@ function gererExpiration() {
     // Montre la bonne réponse en vert, comme après une mauvaise réponse.
     boutons[questions[numero].reponse].classList.add("juste");
     // Informe l'utilisateur que son temps est écoulé.
-    message.textContent = "Temps écoulé. La bonne réponse était indiquée en vert.";
+    message.textContent = "Temps écoulé ! " + questions[numero].explication;
+
     // Adapte le texte du bouton selon la position dans le quiz.
     suivant.textContent = numero === questions.length - 1
         ? "Voir mon score"
@@ -174,9 +176,12 @@ function passerQuestion() {
         // S'il reste des questions, l'affiche et redémarre son minuteur.
         afficherQuestion();
     } else {
-        // Fin du quiz : on garde le score et on va sur la page résultat
+        // Fin du quiz : on garde le meilleur score et on va sur la page résultat
         localStorage.setItem("score", score);
         localStorage.setItem("total", questions.length);
+        if (score > meilleurScore) {
+            localStorage.setItem("meilleurScore", score);
+        }
         window.location.href = "resultat.html";
     }
 }
